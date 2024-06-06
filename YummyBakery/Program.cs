@@ -1,4 +1,10 @@
+using YummyBakery.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
