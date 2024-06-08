@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using YummyBakery.Models;
+using YummyBakery.ViewModels;
 
 namespace YummyBakery.Controllers
 {
@@ -16,8 +17,11 @@ namespace YummyBakery.Controllers
 
 		public IActionResult List()
 		{
-			ViewBag.CurrentCategory = "Cheese cakes";
-			return View(_pieRepository.AllPies);
+			//ViewBag.CurrentCategory = "Cheese cakes";
+			//return View(_pieRepository.AllPies);
+			PieListViewModel pieListViewModel = new PieListViewModel
+				(_pieRepository.AllPies, "cheese cakes");
+			return View(pieListViewModel);
 		}
 	}
 }
