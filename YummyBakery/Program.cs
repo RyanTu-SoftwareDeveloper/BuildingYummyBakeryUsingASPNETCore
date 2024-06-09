@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using YummyBakery.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,10 @@ builder.Services.AddScoped<IPieRepository, MockPieRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<YummyBakeryDbContext>(options => {
+	options.UseSqlServer(
+		builder.Configuration["ConnectionStrings:YummyBakeryContextConnection"]);
+});
 
 var app = builder.Build();
 
