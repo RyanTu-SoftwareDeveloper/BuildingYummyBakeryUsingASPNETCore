@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YummyBakery.Models;
 
@@ -10,9 +11,11 @@ using YummyBakery.Models;
 namespace YummyBakery.Migrations
 {
     [DbContext(typeof(YummyBakeryDbContext))]
-    partial class YummyBakeryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240617202504_AddShoppingCartItem")]
+    partial class AddShoppingCartItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
