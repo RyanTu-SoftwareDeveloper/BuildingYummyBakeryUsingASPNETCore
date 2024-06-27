@@ -15,7 +15,7 @@ namespace YummyBakeryTests.TagHelpers
         public void Generates_Email_Link()
         {
             //Arrange
-            EmailTagHelper emailTagHelper = new EmailTagHelper() { Address = "test@bethanyspieshop.com", Content = "Email" }; ;
+            EmailTagHelper emailTagHelper = new EmailTagHelper() { Address = "ryantu1989@gmail.com.com", Content = "Email" }; ;
 
             var tagHelperContext = new TagHelperContext(
                 new TagHelperAttributeList(),
