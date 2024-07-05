@@ -17,6 +17,8 @@ builder.Services.AddDbContext<YummyBakeryDbContext>(options => {
 		builder.Configuration["ConnectionStrings:YummyBakeryContextConnection"]);
 });
 
+
+
 var app = builder.Build();
 
 app.UseStaticFiles();
