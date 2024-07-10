@@ -31,5 +31,10 @@ namespace YummyBakery.Models
         {
           return _yummyBakeryDbContext.Pies.FirstOrDefault(p =>p.PieId == pieId);   
         }
+
+        public IEnumerable<Pie> SearchPies(string searchQuery)
+        {
+            return _yummyBakeryDbContext.Pies.Where(p => p.Name.Contains(searchQuery)); 
+        }
     }
 }
