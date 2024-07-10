@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using YummyBakery.App.Pages;
 using YummyBakery.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,10 @@ builder.Services.AddScoped<IPieRepository, PieRepository>();
 builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddRazorPages();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
 builder.Services.AddControllersWithViews()
 	.AddJsonOptions(options =>
@@ -44,6 +49,13 @@ app.UseHttpsRedirection();
 
 
 app.UseRouting();
+
+
+app.UseAntiforgery();
+
+app.MapRazorPages();
+
+
 
 app.UseAuthorization();
 
