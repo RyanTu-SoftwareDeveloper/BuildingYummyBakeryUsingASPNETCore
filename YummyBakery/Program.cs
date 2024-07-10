@@ -36,6 +36,7 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseSession();
+app.UseAuthentication();	
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
